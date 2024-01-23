@@ -42,7 +42,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**
@@ -58,7 +58,9 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        return response()->json(['product' => $product]);
     }
 
     /**
@@ -66,6 +68,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return response()->json(['message' => 'Product deleted successfully']);
+   
     }
 }
