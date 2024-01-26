@@ -25,7 +25,7 @@ class StoreProductRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'size' => 'required|string|max:50',
-            'price' => 'required|',
+            'price' => 'required|Numeric',
             // Add more validation rules as needed
         ];
     }
