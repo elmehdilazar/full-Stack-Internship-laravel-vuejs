@@ -13,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products =
+        Product::paginate(4);
        //return response json data
        return response()->json($products);
 
@@ -71,6 +72,6 @@ class ProductController extends Controller
         $product->delete();
 
         return response()->json(['message' => 'Product deleted successfully']);
-   
+
     }
 }
